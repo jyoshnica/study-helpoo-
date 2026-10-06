@@ -1,0 +1,31 @@
+# Smart Study Planner 
+
+A Python-based study planning application that creates a personalized weekly study schedule based on subjects, priorities, and required study hours.
+
+## Features
+
+- Add multiple subjects
+- Set study hours for each subject
+- Set subject priority from 1 to 5
+- Automatically generate a weekly schedule
+- Avoid scheduling the same subject repeatedly when possible
+- Save the generated plan as a JSON file
+- Input validation for user-friendly operation
+
+## Technologies Used
+
+- Python
+- JSON
+- File Handling
+- Data Structures
+- Algorithms
+- Command Line Interface
+
+## How to Run
+
+Make sure Python 3 is installed.
+
+Run:
+
+```bash
+python study_planner.py
