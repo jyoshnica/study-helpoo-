@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Study Helpoo</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="topbar">
+        <div>
+          <p class="eyebrow">Study dashboard</p>
+          <h1>Study Helpoo</h1>
+        </div>
+        <button id="clear-all" class="text-button" type="button">Clear completed</button>
+      </header>
+
+      <main>
+        <section class="hero">
+          <div>
+            <p class="eyebrow">Today</p>
+            <h2 id="date-label">Loading date…</h2>
+            <p id="focus-message">Plan one focused session and begin.</p>
+          </div>
+          <div class="progress-card">
+            <span>Study minutes</span>
+            <strong id="daily-minutes">0</strong>
+            <small id="progress-label">0% of your plan complete</small>
+          </div>
+        </section>
+
+        <section class="stats-grid" aria-label="Study statistics">
+          <article class="stat-card">
+            <span>Total tasks</span>
+            <strong id="total-tasks">0</strong>
+          </article>
+          <article class="stat-card">
+            <span>Completed</span>
+            <strong id="completed-tasks">0</strong>
+          </article>
+          <article class="stat-card">
+            <span>Remaining</span>
+            <strong id="remaining-tasks">0</strong>
+          </article>
+          <article class="stat-card">
+            <span>Minutes</span>
+            <strong id="total-minutes">0</strong>
+          </article>
+        </section>
+
+        <section class="pane-grid">
+          <form id="task-form" class="panel form-panel">
+            <div class="panel-heading">
+              <div>
+                <p class="eyebrow">Add task</p>
+                <h3>Plan your next session</h3>
+              </div>
+            </div>
+
+            <label>
+              Subject
+              <input id="subject" name="subject" type="text" maxlength="30" placeholder="Example: Mathematics" required />
+            </label>
+
+            <label>
+              Task
+              <input id="title" name="title" type="text" maxlength="60" placeholder="Example: Practice algebra" required />
+            </label>
+
+            <div class="field-row">
+              <label>
+                Duration (minutes)
+                <input id="duration" name="duration" type="number" min="5" max="240" step="5" value="30" required />
+              </label>
+
+              <label>
+                Due date
+                <input id="due-date" name="dueDate" type="date" required />
+              </label>
+            </div>
+
+            <button class="primary-button" type="submit">Add task</button>
+          </form>
+
+          <section class="panel tasks-panel" aria-labelledby="tasks-title">
+            <div class="panel-heading">
+              <div>
+                <p class="eyebrow">Your plan</p>
+                <h3 id="tasks-title">Study tasks</h3>
+              </div>
+            </div>
+
+            <div id="task-list" class="task-list" aria-live="polite"></div>
+            <p id="empty-state" class="empty-state">No study tasks yet. Add one to get started.</p>
+          </section>
+        </section>
+      </main>
+    </div>
+
+    <template id="task-template">
+      <article class="task-item">
+        <button class="task-complete" type="button" aria-label="Mark task complete">✓</button>
+        <div class="task-content">
+          <span class="task-subject"></span>
+          <h4></h4>
+          <span class="task-meta"></span>
+        </div>
+        <button class="task-delete" type="button" aria-label="Delete task">Delete</button>
+      </article>
+    </template>
+
+    <script type="module" src="app.js"></script>
+  </body>
+</html>
